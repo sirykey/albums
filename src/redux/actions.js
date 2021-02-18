@@ -1,6 +1,6 @@
 export const loadAlbums = () => {
   return dispatch => {
-    dispatch({type: 'albums/load/start'})
+    dispatch({ type: 'albums/load/start' })
     fetch('https://jsonplaceholder.typicode.com/albums/?_limit=10')
       .then(response => response.json())
       .then(json => {
@@ -9,11 +9,12 @@ export const loadAlbums = () => {
           payload: json
         })
       })
-}}
+  }
+}
 
 export const loadPhotos = () => {
   return dispatch => {
-    dispatch({type: 'photos/load/start'})
+    dispatch({ type: 'photos/load/start' })
     fetch('https://jsonplaceholder.typicode.com/photos')
       .then(response => response.json())
       .then(json => {
@@ -22,7 +23,8 @@ export const loadPhotos = () => {
           payload: json
         })
       })
-}}
+  }
+}
 
 export const selectAlbum = (userId) => {
   return {
@@ -32,7 +34,7 @@ export const selectAlbum = (userId) => {
 }
 
 export const setFilterText = (text) => {
-  return{
+  return {
     type: 'filter/set',
     payload: text
   }

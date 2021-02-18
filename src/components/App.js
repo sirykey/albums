@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { loadAlbums, loadPhotos } from '../redux/actions'
 import { Route } from 'react-router-dom'
 
-function App() {
+function App () {
   const dispatch = useDispatch()
   const loadingAlbums = useSelector(state => state.albums.loading)
   const loadingPhotos = useSelector(state => state.photos.loading)
@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     dispatch(loadAlbums())
     dispatch(loadPhotos())
-  },[])
+  }, [])
 
   if (loadingAlbums || loadingPhotos) {
     return <div>
@@ -28,7 +28,7 @@ function App() {
         <Photos/>
       </Route>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

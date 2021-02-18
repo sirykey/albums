@@ -9,7 +9,7 @@ function Albums () {
 
       <ul>
         {albums.map(album => {
-          return <Album key = {album.id} album = {album}/>
+          return <Album key={album.id} album={album}/>
         })}
       </ul>
     </div>
